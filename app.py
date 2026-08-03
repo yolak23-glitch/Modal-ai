@@ -5,7 +5,7 @@ import streamlit as st
 st.set_page_config(page_title="Modal AI", layout="wide", page_icon="🤖")
 
 # API Key Kontrolü & Kurulumu
-gemini_api_key = st.secrets.get("AQ.Ab8RN6LGNzcfJXMbkwCVggMXPhGVkKzRDZPXBwwAvm9fWZzwhw") or os.getenv("AQ.Ab8RN6LGNzcfJXMbkwCVggMXPhGVkKzRDZPXBwwAvm9fWZzwhw")
+gemini_api_key = st.secrets.get("GEMINI_API_KEY") or os.getenv("GEMINI_API_KEY")
 
 if gemini_api_key:
     genai.configure(api_key=gemini_api_key)
@@ -50,4 +50,4 @@ elif selected_mode == "🎬 Video Üretimi":
     prompt = st.text_area("Video promptu girin.")
     if st.button("Üret"):
         st.info("İstek alındı, video modeli bir sonraki adımda bağlanacak")
-      
+        
